@@ -1,0 +1,301 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xD14853717B68E356",
+      "device": "xc7a100tcsg324-1",
+      "gen_directory": "../../../../project_1_SNN.gen/sources_1/bd/BRAM",
+      "name": "BRAM",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2021.2.1"
+    },
+    "design_tree": {
+      "blk_mem_gen_0": "",
+      "clk_wiz": "",
+      "rst_clk_wiz_100M": "",
+      "xlconstant_0": "",
+      "xlconstant_1": "",
+      "neuron_0": "",
+      "synapse_0": ""
+    },
+    "interface_ports": {
+      "BRAM_PORTA_0": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+        "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+        "parameters": {
+          "MASTER_TYPE": {
+            "value": "BRAM_CTRL"
+          }
+        }
+      }
+    },
+    "ports": {
+      "clk_100MHz": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "100000000"
+          }
+        }
+      },
+      "reset_rtl_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "SpikeIn_0": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "CurrentOut_0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      }
+    },
+    "components": {
+      "blk_mem_gen_0": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "BRAM_blk_mem_gen_0_0",
+        "xci_path": "ip/BRAM_blk_mem_gen_0_0/BRAM_blk_mem_gen_0_0.xci",
+        "inst_hier_path": "blk_mem_gen_0"
+      },
+      "clk_wiz": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "BRAM_clk_wiz_1",
+        "xci_path": "ip/BRAM_clk_wiz_1/BRAM_clk_wiz_1.xci",
+        "inst_hier_path": "clk_wiz"
+      },
+      "rst_clk_wiz_100M": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "xci_name": "BRAM_rst_clk_wiz_100M_1",
+        "xci_path": "ip/BRAM_rst_clk_wiz_100M_1/BRAM_rst_clk_wiz_100M_1.xci",
+        "inst_hier_path": "rst_clk_wiz_100M"
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "BRAM_xlconstant_0_0",
+        "xci_path": "ip/BRAM_xlconstant_0_0/BRAM_xlconstant_0_0.xci",
+        "inst_hier_path": "xlconstant_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          }
+        }
+      },
+      "xlconstant_1": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "BRAM_xlconstant_1_0",
+        "xci_path": "ip/BRAM_xlconstant_1_0/BRAM_xlconstant_1_0.xci",
+        "inst_hier_path": "xlconstant_1"
+      },
+      "neuron_0": {
+        "vlnv": "xilinx.com:module_ref:neuron:1.0",
+        "xci_name": "BRAM_neuron_0_0",
+        "xci_path": "ip/BRAM_neuron_0_0/BRAM_neuron_0_0.xci",
+        "inst_hier_path": "neuron_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "neuron",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "Rst",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "Rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "const_prop"
+              }
+            }
+          },
+          "SpikeIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "SpikeOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "SourceAddr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "synapse_0": {
+        "vlnv": "xilinx.com:module_ref:synapse:1.0",
+        "xci_name": "BRAM_synapse_0_0",
+        "xci_path": "ip/BRAM_synapse_0_0/BRAM_synapse_0_0.xci",
+        "inst_hier_path": "synapse_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "synapse",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "Rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "Rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "AddrIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "SpikeIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "AddrOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "CurrentOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "BRAM_PORTA_0_1": {
+        "interface_ports": [
+          "BRAM_PORTA_0",
+          "blk_mem_gen_0/BRAM_PORTA"
+        ]
+      }
+    },
+    "nets": {
+      "Net1": {
+        "ports": [
+          "clk_wiz/clk_out1",
+          "blk_mem_gen_0/clka",
+          "rst_clk_wiz_100M/slowest_sync_clk",
+          "neuron_0/Clk",
+          "synapse_0/Clk"
+        ]
+      },
+      "SpikeIn_0_1": {
+        "ports": [
+          "SpikeIn_0",
+          "neuron_0/SpikeIn"
+        ]
+      },
+      "blk_mem_gen_0_douta": {
+        "ports": [
+          "blk_mem_gen_0/douta"
+        ]
+      },
+      "clk_100MHz_1": {
+        "ports": [
+          "clk_100MHz",
+          "clk_wiz/clk_in1"
+        ]
+      },
+      "clk_wiz_locked": {
+        "ports": [
+          "clk_wiz/locked",
+          "rst_clk_wiz_100M/dcm_locked"
+        ]
+      },
+      "neuron_0_SourceAddr": {
+        "ports": [
+          "neuron_0/SourceAddr",
+          "synapse_0/AddrIn"
+        ]
+      },
+      "neuron_0_SpikeOut": {
+        "ports": [
+          "neuron_0/SpikeOut",
+          "synapse_0/SpikeIn"
+        ]
+      },
+      "reset_rtl_0_1": {
+        "ports": [
+          "reset_rtl_0",
+          "clk_wiz/reset",
+          "rst_clk_wiz_100M/ext_reset_in"
+        ]
+      },
+      "rst_clk_wiz_100M_peripheral_aresetn": {
+        "ports": [
+          "rst_clk_wiz_100M/peripheral_aresetn",
+          "blk_mem_gen_0/rsta",
+          "neuron_0/Rst",
+          "synapse_0/Rst"
+        ]
+      },
+      "synapse_0_AddrOut": {
+        "ports": [
+          "synapse_0/AddrOut",
+          "blk_mem_gen_0/addra"
+        ]
+      },
+      "synapse_0_CurrentOut": {
+        "ports": [
+          "synapse_0/CurrentOut",
+          "CurrentOut_0"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "blk_mem_gen_0/wea"
+        ]
+      },
+      "xlconstant_1_dout": {
+        "ports": [
+          "xlconstant_1/dout",
+          "blk_mem_gen_0/ena"
+        ]
+      }
+    }
+  }
+}

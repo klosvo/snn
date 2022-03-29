@@ -1,0 +1,41 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.875063",
+   "Default View_TopLeft":"-193,-256",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port BRAM_PORTA_0 -pg 1 -lvl 0 -x -30 -y 60 -defaultsOSRD
+preplace port port-id_clk_100MHz -pg 1 -lvl 0 -x -30 -y 210 -defaultsOSRD
+preplace port port-id_reset_rtl_0 -pg 1 -lvl 0 -x -30 -y 130 -defaultsOSRD
+preplace portBus SpikeIn_0 -pg 1 -lvl 0 -x -30 -y 270 -defaultsOSRD
+preplace portBus CurrentOut_0 -pg 1 -lvl 7 -x 1820 -y 260 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 6 -x 1670 -y 130 -defaultsOSRD
+preplace inst clk_wiz -pg 1 -lvl 2 -x 350 -y 200 -defaultsOSRD
+preplace inst rst_clk_wiz_100M -pg 1 -lvl 3 -x 640 -y 170 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 5 -x 1330 -y 480 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 5 -x 1330 -y 360 -defaultsOSRD
+preplace inst neuron_0 -pg 1 -lvl 4 -x 990 -y 250 -defaultsOSRD
+preplace inst synapse_0 -pg 1 -lvl 5 -x 1330 -y 200 -defaultsOSRD
+preplace netloc Net1 1 2 4 460 270 820 160 1170 110 N
+preplace netloc SpikeIn_0_1 1 0 4 NJ 270 140 280 NJ 280 830J
+preplace netloc blk_mem_gen_0_douta 1 5 1 NJ 130
+preplace netloc clk_100MHz_1 1 0 2 NJ 210 N
+preplace netloc clk_wiz_locked 1 2 1 N 210
+preplace netloc neuron_0_SourceAddr 1 4 1 1160 210n
+preplace netloc neuron_0_SpikeOut 1 4 1 1170 230n
+preplace netloc reset_rtl_0_1 1 0 3 N 130 150 270 450
+preplace netloc rst_clk_wiz_100M_peripheral_aresetn 1 3 3 830 170 1150 290 1510J
+preplace netloc synapse_0_AddrOut 1 5 1 1490 90n
+preplace netloc synapse_0_CurrentOut 1 5 2 1490J 260 NJ
+preplace netloc xlconstant_0_dout 1 5 1 1520J 190n
+preplace netloc xlconstant_1_dout 1 5 1 1500J 150n
+preplace netloc BRAM_PORTA_0_1 1 0 6 NJ 60 150 70 NJ 70 NJ 70 NJ 70 NJ
+levelinfo -pg 1 -30 120 350 640 990 1330 1670 1820
+pagesize -pg 1 -db -bbox -sgen -200 -260 2000 540
+"
+}
+{
+   "da_board_cnt":"3",
+   "da_clkrst_cnt":"2"
+}
